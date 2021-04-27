@@ -75,6 +75,12 @@
     </Compile>
     <Compile Include="Manufacturer.cs" />
     <Compile Include="Model1.cs" />
+    <Compile Include="Plitka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plitka.Designer.cs">
+      <DependentUpon>Plitka.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs" />
     <Compile Include="ProductSale.cs" />
     <Compile Include="Program.cs" />
@@ -84,6 +90,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Basefrm.resx">
       <DependentUpon>Basefrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Changefrm.resx">
+      <DependentUpon>Changefrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plitka.resx">
+      <DependentUpon>Plitka.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

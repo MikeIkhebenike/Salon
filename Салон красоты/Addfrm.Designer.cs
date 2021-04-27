@@ -37,6 +37,8 @@ namespace Салон_красоты
             System.Windows.Forms.Label titleLabel;
             System.Windows.Forms.Label nameLabel1;
             System.Windows.Forms.Label mainImagePathLabel;
+            System.Windows.Forms.Label manufacturerIDLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Addfrm));
             this.costTextBox = new System.Windows.Forms.TextBox();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
@@ -49,6 +51,10 @@ namespace Салон_красоты
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.manufacturerIDComboBox = new System.Windows.Forms.ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             costLabel = new System.Windows.Forms.Label();
             descriptionLabel = new System.Windows.Forms.Label();
             iDLabel = new System.Windows.Forms.Label();
@@ -56,16 +62,19 @@ namespace Салон_красоты
             titleLabel = new System.Windows.Forms.Label();
             nameLabel1 = new System.Windows.Forms.Label();
             mainImagePathLabel = new System.Windows.Forms.Label();
+            manufacturerIDLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.manufacturerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainImagePathPictureBox)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // costLabel
             // 
             costLabel.AutoSize = true;
             costLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            costLabel.Location = new System.Drawing.Point(18, 152);
+            costLabel.Location = new System.Drawing.Point(17, 230);
             costLabel.Name = "costLabel";
             costLabel.Size = new System.Drawing.Size(57, 20);
             costLabel.TabIndex = 1;
@@ -75,7 +84,7 @@ namespace Салон_красоты
             // 
             descriptionLabel.AutoSize = true;
             descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            descriptionLabel.Location = new System.Drawing.Point(18, 113);
+            descriptionLabel.Location = new System.Drawing.Point(17, 191);
             descriptionLabel.Name = "descriptionLabel";
             descriptionLabel.Size = new System.Drawing.Size(96, 20);
             descriptionLabel.TabIndex = 3;
@@ -85,7 +94,7 @@ namespace Салон_красоты
             // 
             iDLabel.AutoSize = true;
             iDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            iDLabel.Location = new System.Drawing.Point(18, 35);
+            iDLabel.Location = new System.Drawing.Point(17, 113);
             iDLabel.Name = "iDLabel";
             iDLabel.Size = new System.Drawing.Size(33, 20);
             iDLabel.TabIndex = 5;
@@ -95,7 +104,7 @@ namespace Салон_красоты
             // 
             isActiveLabel.AutoSize = true;
             isActiveLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            isActiveLabel.Location = new System.Drawing.Point(18, 193);
+            isActiveLabel.Location = new System.Drawing.Point(17, 271);
             isActiveLabel.Name = "isActiveLabel";
             isActiveLabel.Size = new System.Drawing.Size(140, 20);
             isActiveLabel.TabIndex = 7;
@@ -105,7 +114,7 @@ namespace Салон_красоты
             // 
             titleLabel.AutoSize = true;
             titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            titleLabel.Location = new System.Drawing.Point(18, 73);
+            titleLabel.Location = new System.Drawing.Point(17, 151);
             titleLabel.Name = "titleLabel";
             titleLabel.Size = new System.Drawing.Size(139, 20);
             titleLabel.TabIndex = 11;
@@ -115,7 +124,7 @@ namespace Салон_красоты
             // 
             nameLabel1.AutoSize = true;
             nameLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            nameLabel1.Location = new System.Drawing.Point(18, 238);
+            nameLabel1.Location = new System.Drawing.Point(17, 316);
             nameLabel1.Name = "nameLabel1";
             nameLabel1.Size = new System.Drawing.Size(149, 20);
             nameLabel1.TabIndex = 14;
@@ -125,17 +134,27 @@ namespace Салон_красоты
             // 
             mainImagePathLabel.AutoSize = true;
             mainImagePathLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            mainImagePathLabel.Location = new System.Drawing.Point(563, 9);
+            mainImagePathLabel.Location = new System.Drawing.Point(562, 87);
             mainImagePathLabel.Name = "mainImagePathLabel";
             mainImagePathLabel.Size = new System.Drawing.Size(122, 20);
             mainImagePathLabel.TabIndex = 15;
             mainImagePathLabel.Text = "Изображение";
             // 
+            // manufacturerIDLabel
+            // 
+            manufacturerIDLabel.AutoSize = true;
+            manufacturerIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            manufacturerIDLabel.Location = new System.Drawing.Point(17, 361);
+            manufacturerIDLabel.Name = "manufacturerIDLabel";
+            manufacturerIDLabel.Size = new System.Drawing.Size(145, 20);
+            manufacturerIDLabel.TabIndex = 17;
+            manufacturerIDLabel.Text = "Manufacturer ID:";
+            // 
             // costTextBox
             // 
             this.costTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "Cost", true));
             this.costTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.costTextBox.Location = new System.Drawing.Point(180, 149);
+            this.costTextBox.Location = new System.Drawing.Point(179, 227);
             this.costTextBox.Name = "costTextBox";
             this.costTextBox.Size = new System.Drawing.Size(270, 26);
             this.costTextBox.TabIndex = 2;
@@ -148,7 +167,7 @@ namespace Салон_красоты
             // 
             this.descriptionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "Description", true));
             this.descriptionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.descriptionTextBox.Location = new System.Drawing.Point(180, 110);
+            this.descriptionTextBox.Location = new System.Drawing.Point(179, 188);
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(270, 26);
             this.descriptionTextBox.TabIndex = 4;
@@ -157,7 +176,7 @@ namespace Салон_красоты
             // 
             this.iDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ID", true));
             this.iDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.iDTextBox.Location = new System.Drawing.Point(180, 32);
+            this.iDTextBox.Location = new System.Drawing.Point(179, 110);
             this.iDTextBox.Name = "iDTextBox";
             this.iDTextBox.Size = new System.Drawing.Size(270, 26);
             this.iDTextBox.TabIndex = 6;
@@ -166,7 +185,7 @@ namespace Салон_красоты
             // 
             this.isActiveCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.productBindingSource, "IsActive", true));
             this.isActiveCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.isActiveCheckBox.Location = new System.Drawing.Point(182, 193);
+            this.isActiveCheckBox.Location = new System.Drawing.Point(181, 271);
             this.isActiveCheckBox.Name = "isActiveCheckBox";
             this.isActiveCheckBox.Size = new System.Drawing.Size(104, 24);
             this.isActiveCheckBox.TabIndex = 8;
@@ -176,7 +195,7 @@ namespace Салон_красоты
             // 
             this.titleTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "Title", true));
             this.titleTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.titleTextBox.Location = new System.Drawing.Point(180, 70);
+            this.titleTextBox.Location = new System.Drawing.Point(179, 148);
             this.titleTextBox.Name = "titleTextBox";
             this.titleTextBox.Size = new System.Drawing.Size(270, 26);
             this.titleTextBox.TabIndex = 12;
@@ -190,7 +209,7 @@ namespace Салон_красоты
             this.nameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.nameComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nameComboBox.FormattingEnabled = true;
-            this.nameComboBox.Location = new System.Drawing.Point(180, 230);
+            this.nameComboBox.Location = new System.Drawing.Point(179, 308);
             this.nameComboBox.Name = "nameComboBox";
             this.nameComboBox.Size = new System.Drawing.Size(266, 28);
             this.nameComboBox.TabIndex = 15;
@@ -204,7 +223,7 @@ namespace Салон_красоты
             // mainImagePathPictureBox
             // 
             this.mainImagePathPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.productBindingSource, "MainImagePath", true));
-            this.mainImagePathPictureBox.Location = new System.Drawing.Point(516, 48);
+            this.mainImagePathPictureBox.Location = new System.Drawing.Point(515, 126);
             this.mainImagePathPictureBox.Name = "mainImagePathPictureBox";
             this.mainImagePathPictureBox.Size = new System.Drawing.Size(223, 197);
             this.mainImagePathPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -214,7 +233,7 @@ namespace Салон_красоты
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(22, 349);
+            this.button1.Location = new System.Drawing.Point(21, 427);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 45);
             this.button1.TabIndex = 17;
@@ -225,7 +244,7 @@ namespace Салон_красоты
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(565, 266);
+            this.button2.Location = new System.Drawing.Point(564, 344);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 45);
             this.button2.TabIndex = 17;
@@ -236,7 +255,7 @@ namespace Салон_красоты
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(667, 349);
+            this.button3.Location = new System.Drawing.Point(666, 427);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(120, 45);
             this.button3.TabIndex = 17;
@@ -244,11 +263,60 @@ namespace Салон_красоты
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // manufacturerIDComboBox
+            // 
+            this.manufacturerIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ManufacturerID", true));
+            this.manufacturerIDComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productBindingSource, "ManufacturerID", true));
+            this.manufacturerIDComboBox.DataSource = this.manufacturerBindingSource;
+            this.manufacturerIDComboBox.DisplayMember = "Name";
+            this.manufacturerIDComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.manufacturerIDComboBox.FormattingEnabled = true;
+            this.manufacturerIDComboBox.Location = new System.Drawing.Point(179, 358);
+            this.manufacturerIDComboBox.Name = "manufacturerIDComboBox";
+            this.manufacturerIDComboBox.Size = new System.Drawing.Size(266, 28);
+            this.manufacturerIDComboBox.TabIndex = 18;
+            this.manufacturerIDComboBox.ValueMember = "ID";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(808, 70);
+            this.panel2.TabIndex = 19;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(316, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(137, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Салон красоты";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(3, -1);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(95, 70);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
+            // 
             // Addfrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(811, 412);
+            this.ClientSize = new System.Drawing.Size(808, 484);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(manufacturerIDLabel);
+            this.Controls.Add(this.manufacturerIDComboBox);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -272,6 +340,9 @@ namespace Салон_красоты
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.manufacturerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainImagePathPictureBox)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,5 +362,9 @@ namespace Салон_красоты
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox manufacturerIDComboBox;
+        protected System.Windows.Forms.Panel panel2;
+        protected System.Windows.Forms.Label label2;
+        protected System.Windows.Forms.PictureBox pictureBox2;
     }
 }

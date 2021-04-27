@@ -41,7 +41,13 @@ namespace Салон_красоты
         private void button2_Click(object sender, EventArgs e)
         {
             Changefrm form = new Changefrm();
-            DialogResult = form.ShowDialog();
+            Product lich = (Product)productBindingSource.Current;
+            DialogResult dr = form.ShowDialog();
+            if (dr == DialogResult.OK)
+            {
+                productBindingSource.DataSource = db.Product.ToList();
+                manufacturerBindingSource.DataSource = db.Manufacturer.ToList();
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -63,6 +69,65 @@ namespace Салон_красоты
                 }
                 productBindingSource.DataSource = db.Product.ToList();
             }
+        }      
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            (productDataGridView.DataSource as DataTable).DefaultView.RowFilter = string.Format("Title like '{2}%'", textBox1.Text);
+        }
+
+
+        /// <summary>
+        /// Check if a given text exists in the given DataGridView at a given column index
+        /// </summary>
+        /// <param name="searchText"></param>
+        /// <param name="dataGridView"></param>
+        /// <param name="columnIndex"></param>
+        /// <returns>The cell in which the searchText was found</returns>
+        private DataGridViewCell GetCellWhereTextExistsInGridView(string searchText, DataGridView dataGridView, int columnIndex)
+        {
+            DataGridViewCell cellWhereTextIsMet = null;
+
+            // For every row in the grid (obviously)
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                // I did not test this case, but cell.Value is an object, and objects can be null
+                // So check if the cell is null before using .ToString()
+                if (row.Cells[1].Value != null && searchText == row.Cells[1].Value.ToString())
+                {
+                    // the searchText is equals to the text in this cell.
+                    cellWhereTextIsMet = row.Cells[columnIndex];
+                    break;
+                }
+            }
+
+            return cellWhereTextIsMet;
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            DataGridViewCell cell = GetCellWhereTextExistsInGridView(textBox1.Text, productDataGridView, 2);
+            if (cell != null)
+            {
+                // Value exists in the grid
+                // you can do extra stuff on the cell
+                cell.Style = new DataGridViewCellStyle { ForeColor = Color.Red };
+            }
+            else
+            {
+                // Value does not exist in the grid
+            }
+        }
+
+
+
+
+
+
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Plitka form = new Plitka();
+            DialogResult = form.ShowDialog();
         }
     }
 }

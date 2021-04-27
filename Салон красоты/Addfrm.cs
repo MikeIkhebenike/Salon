@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Салон_красоты
@@ -22,7 +17,7 @@ namespace Салон_красоты
 
         private void Addfrm_Load(object sender, EventArgs e)
         {
-            
+
         }
         private void nameComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -48,7 +43,16 @@ namespace Салон_красоты
                 MessageBox.Show(" Не задан производитель продукта!");
                 return;
             }
-           
+            lich.ManufacturerID = Convert.ToInt32(manufacturerIDComboBox.Text);
+            // создаем конвертер для преобразования изображения
+
+            ImageConverter conv = new ImageConverter();
+            // создаем массив байтов, из свойства Image ЭУ PictureBox
+            byte[] bImg = (byte[])conv.ConvertTo(mainImagePathPictureBox.Image, typeof(byte[]));
+            // присваиваем свойству изображение в формате byte[]
+            lich.MainImagePath = Convert.ToString(bImg);
+            // добавляем новый объект к коллекции
+
             //lich.ID = Convert.ToInt32(iDTextBox.Text);
             //int id = int.Parse(nameComboBox.Text);
             //// ищем сотрудника с заданным ID – первичный ключ
@@ -62,14 +66,13 @@ namespace Салон_красоты
             db.Product.Add(lich);
             try
             {
-                // сохраняем сделанные изменения в БД
                 db.SaveChanges();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        
+
             DialogResult = DialogResult.OK;
         }
         private void button2_Click(object sender, EventArgs e)
