@@ -83,43 +83,60 @@ namespace Салон_красоты
         /// <param name="dataGridView"></param>
         /// <param name="columnIndex"></param>
         /// <returns>The cell in which the searchText was found</returns>
-        private DataGridViewCell GetCellWhereTextExistsInGridView(string searchText, DataGridView dataGridView, int columnIndex)
-        {
-            DataGridViewCell cellWhereTextIsMet = null;
+        //private DataGridViewCell GetCellWhereTextExistsInGridView(string searchText, DataGridView dataGridView, int columnIndex)
+        //{
+        //    DataGridViewCell cellWhereTextIsMet = null;
 
-            // For every row in the grid (obviously)
-            foreach (DataGridViewRow row in dataGridView.Rows)
-            {
-                // I did not test this case, but cell.Value is an object, and objects can be null
-                // So check if the cell is null before using .ToString()
-                if (row.Cells[1].Value != null && searchText == row.Cells[1].Value.ToString())
-                {
-                    // the searchText is equals to the text in this cell.
-                    cellWhereTextIsMet = row.Cells[columnIndex];
-                    break;
-                }
-            }
+        //    // For every row in the grid (obviously)
+        //    foreach (DataGridViewRow row in dataGridView.Rows)
+        //    {
+        //        // I did not test this case, but cell.Value is an object, and objects can be null
+        //        // So check if the cell is null before using .ToString()
+        //        if (row.Cells[1].Value != null && searchText == row.Cells[1].Value.ToString())
+        //        {
+        //            // the searchText is equals to the text in this cell.
+        //            cellWhereTextIsMet = row.Cells[columnIndex];
+        //            break;
+        //        }
+        //    }
 
-            return cellWhereTextIsMet;
-        }
+        //    return cellWhereTextIsMet;
+        //}
+
+        //private void button4_Click_1(object sender, EventArgs e)
+        //{
+        //    DataGridViewCell cell = GetCellWhereTextExistsInGridView(textBox1.Text, productDataGridView, 2);
+        //    if (cell != null)
+        //    {
+        //        // Value exists in the grid
+        //        // you can do extra stuff on the cell
+        //        cell.Style = new DataGridViewCellStyle { ForeColor = Color.Red };
+        //    }
+        //    else
+        //    {
+        //        // Value does not exist in the grid
+        //    }
+        //}
+
+
+        int i;
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-            DataGridViewCell cell = GetCellWhereTextExistsInGridView(textBox1.Text, productDataGridView, 2);
-            if (cell != null)
+
+            for (int i = 0; i < productDataGridView.RowCount; i++)
             {
-                // Value exists in the grid
-                // you can do extra stuff on the cell
-                cell.Style = new DataGridViewCellStyle { ForeColor = Color.Red };
+                productDataGridView.Rows[i].Selected = false;
+                for (int j = 0; j < productDataGridView.ColumnCount; j++)
+                    if (productDataGridView.Rows[i].Cells[j].Value != null)
+                        if (productDataGridView.Rows[i].Cells[j].Value.ToString().Contains(textBox1.Text))
+                        {
+                            productDataGridView.Rows[i].Selected = true;
+                            break;
+                        }
             }
-            else
-            {
-                // Value does not exist in the grid
-            }
+
         }
-
-
-
 
 
 
