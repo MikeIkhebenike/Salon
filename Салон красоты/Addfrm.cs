@@ -8,6 +8,8 @@ namespace Салон_красоты
     public partial class Addfrm : Form
     {
         Model1 db = new Model1();
+        
+        string folder;
         public Addfrm()
         {
             InitializeComponent();
@@ -16,10 +18,6 @@ namespace Салон_красоты
         }
 
         private void Addfrm_Load(object sender, EventArgs e)
-        {
-
-        }
-        private void nameComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -50,19 +48,9 @@ namespace Салон_красоты
             // создаем массив байтов, из свойства Image ЭУ PictureBox
             byte[] bImg = (byte[])conv.ConvertTo(mainImagePathPictureBox.Image, typeof(byte[]));
             // присваиваем свойству изображение в формате byte[]
-            lich.MainImagePath = Convert.ToString(bImg);
+            lich.MainImagePath = folder;
             // добавляем новый объект к коллекции
 
-            //lich.ID = Convert.ToInt32(iDTextBox.Text);
-            //int id = int.Parse(nameComboBox.Text);
-            //// ищем сотрудника с заданным ID – первичный ключ
-            //Product std = db.Product.Find(id);
-            //if (std == null)
-            //{
-            //    MessageBox.Show(" Продукта с таким ID нет! ");
-            //    return;
-            //}
-            //lich.Manufacturer = Convert.ToString( nameComboBox.Text);
             db.Product.Add(lich);
             try
             {
@@ -78,15 +66,16 @@ namespace Салон_красоты
         private void button2_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Title = " Выберите фото сотрудника ";
-            ofd.InitialDirectory = @" C:\Users\micha\OneDrive\Изображения\Students_Photos";
-            ofd.Filter = " Файлы JPG, GIF, PNG| *.jpg; *.gif; *.png | Все файлы(*.*) | *.* ";
+            ofd.Title = "Выберите фото";
+            ofd.InitialDirectory = @"C:\Users\315\source\repos\Салон красоты\Товары салона красоты";
+            ofd.Filter = "Файлы JPG, GIF, PNG|*.jpg;*.gif;*.png|Все файлы (*.*)|*.*";
             DialogResult rc = ofd.ShowDialog();
             if (rc == DialogResult.OK)
             {
-                // показываем выбранный файл в PictureBox
                 mainImagePathPictureBox.Image = Image.FromFile(ofd.FileName);
+                folder = ofd.FileName;
             }
+
         }
 
         private void button3_Click(object sender, EventArgs e)

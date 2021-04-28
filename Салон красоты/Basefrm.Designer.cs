@@ -32,14 +32,7 @@ namespace Салон_красоты
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Basefrm));
             this.productDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ManufacturerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -48,13 +41,22 @@ namespace Салон_красоты
             this.button3 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.manufacturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.manufacturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.manufacturerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,54 +78,6 @@ namespace Салон_красоты
             this.productDataGridView.Size = new System.Drawing.Size(772, 255);
             this.productDataGridView.TabIndex = 0;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 43;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Title";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Название";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 82;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Cost";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Цена";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 58;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Description";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Описание";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 82;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "MainImagePath";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Изображение";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 102;
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "IsActive";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "В продаже\\нет";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.Width = 80;
-            // 
             // ManufacturerID
             // 
             this.ManufacturerID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -131,10 +85,6 @@ namespace Салон_красоты
             this.ManufacturerID.HeaderText = "ID производителя";
             this.ManufacturerID.Name = "ManufacturerID";
             this.ManufacturerID.Width = 113;
-            // 
-            // productBindingSource
-            // 
-            this.productBindingSource.DataSource = typeof(Салон_красоты.Product);
             // 
             // label2
             // 
@@ -219,10 +169,6 @@ namespace Салон_красоты
             this.label1.TabIndex = 12;
             this.label1.Text = "Поиск";
             // 
-            // manufacturerBindingSource
-            // 
-            this.manufacturerBindingSource.DataSource = typeof(Салон_красоты.Manufacturer);
-            // 
             // button4
             // 
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
@@ -245,11 +191,89 @@ namespace Салон_красоты
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(790, 193);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(159, 28);
+            this.comboBox1.TabIndex = 15;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(790, 227);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(90, 17);
+            this.checkBox1.TabIndex = 16;
+            this.checkBox1.Text = "Фильтрация";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 43;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Title";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Название";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 82;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Cost";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Цена";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 58;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Description";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Описание";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 82;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "MainImagePath";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Изображение";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 102;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "IsActive";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "В продаже\\нет";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.Width = 80;
+            // 
+            // productBindingSource
+            // 
+            this.productBindingSource.DataSource = typeof(Салон_красоты.Product);
+            // 
+            // manufacturerBindingSource
+            // 
+            this.manufacturerBindingSource.DataSource = typeof(Салон_красоты.Manufacturer);
+            // 
             // Basefrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1031, 438);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label1);
@@ -261,11 +285,12 @@ namespace Салон_красоты
             this.Controls.Add(this.productDataGridView);
             this.Name = "Basefrm";
             this.Text = "База данных";
+            this.Load += new System.EventHandler(this.Basefrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.manufacturerBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -294,6 +319,8 @@ namespace Салон_красоты
         private System.Windows.Forms.DataGridViewTextBoxColumn ManufacturerID;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 

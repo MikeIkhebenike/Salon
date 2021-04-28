@@ -214,7 +214,6 @@ namespace Салон_красоты
             this.nameComboBox.Size = new System.Drawing.Size(266, 28);
             this.nameComboBox.TabIndex = 15;
             this.nameComboBox.ValueMember = "ID";
-            this.nameComboBox.SelectedIndexChanged += new System.EventHandler(this.nameComboBox_SelectedIndexChanged);
             // 
             // manufacturerBindingSource
             // 
